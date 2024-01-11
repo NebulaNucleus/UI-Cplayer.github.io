@@ -1,0 +1,92 @@
+<!-- 
+   Edit User Component 
+   
+   A user can edit his 3 information and delete the account also :
+      1. update mobile number
+      2. update profile picture
+      3. set new password
+ -->
+
+<mat-tab-group>
+
+   <mat-tab class="main" label="Mobile Update">
+      <div class="headers">Change Your Mobile Number</div>
+      <form [formGroup]="mobileForm" (ngSubmit)="mobiles()">
+         <div>
+            <label for="mobile">Mobile</label>
+            <input class="mobile" type="text" placeholder="  Enter your mobile" formControlName="mobile"><br>
+            <small class="err" *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
+               Enter a valid 10 digit Mobile Number
+            </small>
+         </div>
+         <div class="but">
+            <button value="update">Update</button>
+         </div>
+      </form>
+   </mat-tab>
+
+   <mat-tab class="main" label="Image Update">
+      <div class="headers">Change you Profile Picture</div>
+      <form (ngSubmit)="image()">
+         <div class="image-upload-container btn btn-bwm">
+            <label>Image</label>
+            <input #imageInput class="image" type="file" (change)="onFileChanged($event)">
+         </div>
+         <div class="but">
+            <button value="update">Update</button>
+         </div>
+      </form>
+   </mat-tab>
+
+   <mat-tab class="main" label="Password Update">
+      <div class="headers">Change Your Password</div>
+      <form [formGroup]="passwordForm" (ngSubmit)="password()">
+         <div>
+            <label for="oldPassword">Old Password</label>
+            <input class="password" type="password" placeholder="  Enter old password"
+               formControlName="oldPassword"><br>
+            <small *ngIf="oldPassword.invalid && (oldPassword.dirty || oldPassword.touched)">
+               <small class="err" *ngIf="oldPassword.errors.required">
+                  Password cannot be left blank
+               </small>
+               <small class="err" *ngIf="oldPassword.errors.minlength">
+                  Password must have minimum 8characters
+               </small>
+            </small>
+         </div>
+
+         <div>
+            <label for="newPassord">New Password</label>
+            <input class="password" type="password" placeholder="  Enter new password"
+               formControlName="newPassword"><br>
+            <small *ngIf="newPassword.invalid && (newPassword.dirty || newPassword.touched)">
+               <small class="err" *ngIf="newPassword.errors.required">
+                  Password cannot be left blank
+               </small>
+               <small class="err" *ngIf="newPassword.errors.minlength">
+                  Password must have minimum 8characters
+               </small>
+            </small>
+         </div>
+
+         <div class="but">
+            <button value="update">Update</button>
+         </div>
+      </form>
+   </mat-tab>
+
+   <mat-tab class="main" label="Delete Account">
+      <div class="delpa">
+         <div class="formTaker-Expansion">
+            <mat-form-field appearance="outline">
+               <mat-label>Delete Account</mat-label>
+               <input matInput placeholder="Please enter password" [(ngModel)]="val">
+               <mat-hint>We have new features coming</mat-hint>
+            </mat-form-field>
+
+            <button mat-raised-button (click)="deleteUser(val)" class="buttn" color="primary">Delete</button>
+         </div>
+      </div>
+   </mat-tab>
+
+</mat-tab-group>

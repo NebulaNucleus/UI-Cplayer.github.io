@@ -1,0 +1,21 @@
+.cardContainer{
+   display: flex;
+   flex-wrap: wrap;
+ }
+ .card{
+   text-align: center;
+   width: 250px;
+   margin: 15px;
+ }
+ .button-pos{
+   position: absolute;
+   bottom: 4px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-left: 125px;
+ }
+ .pagination{
+   position: absolute;
+   bottom: 45px;
+   right: 10px;
+ }

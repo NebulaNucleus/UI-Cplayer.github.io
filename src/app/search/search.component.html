@@ -1,0 +1,52 @@
+<!-- creating search button ad get a list of players -->
+
+<div class="formTaker-Expansion">
+   <mat-form-field appearance="outline">
+      <mat-label>Search Player</mat-label>
+      <input matInput placeholder="Please enter Name" [(ngModel)]="val">
+      <mat-hint>Type player name ex : Virat</mat-hint>
+   </mat-form-field>
+
+   <button mat-raised-button (click)="getData(val)" class="buttn" color="primary">Search</button>
+</div>
+
+<div class="cardContainer">
+
+   <mat-card class="card" style="background: linear-gradient(
+      rgba(255, 255, 255, 0.8), 
+      rgba(255, 255, 255, 0.7)
+    ),url('../../assets/doodul.png')" *ngFor="let data of list | paginate: config">
+
+      <mat-card-title>
+         {{data.name}}
+      </mat-card-title>
+      <mat-card-subtitle>
+         Country : {{data.country}}
+      </mat-card-subtitle>
+      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      <!-- style="background-image: url('../../assets/doodul.png');" -->
+
+      <mat-card-content>
+        <!-- <p> Country : {{data.country}}</p> <br> -->
+         <mat-divider style="width: 80%; margin-left: 10%;"></mat-divider>
+         <p> <small  style="margin-top:1px; margin-bottom: 0px;"> ID : {{data.id}}</small> </p>
+      </mat-card-content>
+
+      <mat-card-actions>
+         <button *ngIf="data.status" mat-icon-button class="button-pos" (click)="addToFav(data);onView(data.id)">
+           <mat-icon>favorite</mat-icon>
+         </button>
+         <!-- <button *ngIf="data.status" mat-icon-button class="button-pos" (click)="onView(data.id)">
+            <mat-icon>home</mat-icon>
+          </button> -->
+         <button *ngIf="!data.status" mat-icon-button color="warn" class="button-pos"
+           (click)="removeFromFav(data)">
+           <mat-icon>favorite</mat-icon>
+         </button>
+       </mat-card-actions>
+   </mat-card>
+</div>
+
+<div class="pagination">
+   <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+</div>

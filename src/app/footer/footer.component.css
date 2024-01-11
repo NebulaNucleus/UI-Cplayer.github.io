@@ -1,0 +1,19 @@
+.foot{
+   position: absolute;
+   bottom: 0px;
+   width: 99%;
+   z-index: 2;
+ }
+ .icons{
+   margin-left: 10px;
+   height: 30px;
+ }
+ .copy{
+   position: absolute;
+   right: 10px;
+   font-size: 13px;
+ }
+ .foot-text{
+   font-size: medium;
+ }
+ 

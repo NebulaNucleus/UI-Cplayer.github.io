@@ -1,0 +1,25 @@
+.sidenav .mat-toolbar {
+   background: inherit;
+ }
+ 
+ .mat-toolbar.mat-primary {
+   position: sticky;
+   top: 0;
+   z-index: 1;
+ }
+ .cardContainer{
+   display: flex;
+   flex-wrap: wrap;
+ }
+ .card{
+   width: 210px;
+   margin: 10px 10px;
+   margin-bottom: 60px;
+ }
+ .button-pos{
+   position: absolute;
+   bottom: 4px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-left: 37%;
+ }

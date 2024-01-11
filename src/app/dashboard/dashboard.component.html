@@ -1,0 +1,65 @@
+<!-- Contains header and footer and a router outlet and works as the parent of the other components -->
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <div class="heading">Cricket Player</div>
+    <div class="top">
+      <a mat-button routerLink="search">Search </a>
+      <a mat-button routerLink="favs">Favourites </a>
+      <a mat-button routerLink="recom">Recommended </a>
+      <a mat-button routerLink="stats">Statistics </a>
+      <a mat-button routerLink="news"> News </a>
+      <a mat-button routerLink="cal">Calendar</a>
+      <a mat-button routerLink="contact"> Contact Us </a>
+    </div>
+    <!-- <div class="dropdown">
+      <img class="img" src={{user.image}} width="55" height="55">
+      <div class="dropdown-content">
+        <a class="drop" mat-button routerLink="edit"> Edit Profile </a><br>
+        <a class="drop" mat-button (click)="logout()"> Log Out </a>
+      </div>
+    </div> -->
+    <div class="dropdown">
+      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Profile
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" routerLink="edit">Edit Profile</a><br>
+        <a class="dropdown-item"  (click)="logout()"> Log Out </a>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list class="side">
+      <a mat-list-item routerLink="search"> Search </a>
+      <a mat-list-item routerLink="favs"> Favourites </a>
+      <a mat-list-item routerLink="news"> News </a>
+      <a mat-list-item routerLink="recom"> Recommended </a>
+      <a mat-list-item routerLink="stats"> Statistics </a>
+      <a mat-list-item routerLink="contact"> Contact Us </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+
+      <router-outlet></router-outlet>
+      <router-outlet name='statOpener'></router-outlet>
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <mat-toolbar class="foot" color="primary">
+  <mat-toolbar-row>
+    <div class="foot-text"></div>
+   
+  </mat-toolbar-row>
+</mat-toolbar> -->

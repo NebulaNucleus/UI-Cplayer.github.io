@@ -1,0 +1,82 @@
+<!-- Showing the search result of players as searched by name -->
+
+<div class="formTaker-Expansion">
+   <mat-form-field appearance="outline">
+      <mat-label>Get Statistics</mat-label>
+      <input matInput placeholder="Enter Name of Player" [(ngModel)]="val">
+      <mat-hint>eg: Virat</mat-hint>
+   </mat-form-field>
+
+   <button mat-raised-button (click)="getData(val)" class="buttn" color="primary">Search</button>
+</div>
+
+<div class="cardContainer">
+
+   <!-- <mat-card class="card" *ngFor="let data of list | paginate: config" (click)="viewStats(data)">
+
+      <mat-card-subtitle>
+         Country : {{data.country}}
+      </mat-card-subtitle>
+<img mat-card-image src="{{data.playerImg}}" alt="Photo of a Shiba Inu">
+     
+      <mat-card-content>
+         Date of Birth : {{data [0]['dateOfBirth']}} <br> <mat-divider></mat-divider>
+         Place of Birth : {{data [0]['placeOfBirth']}} <br> <mat-divider></mat-divider>
+         Country : {{data[0]['country']}} <br> <mat-divider></mat-divider>
+         Date of Birth : {{data.dateOfBirth}} <br> <mat-divider></mat-divider>
+
+         Role : {{data[0]['role']}}<br> <mat-divider></mat-divider>
+ <mat-divider style="width: 80%; margin-left: 10%;"></mat-divider>
+         <p> <small  style="margin-top:1px; margin-bottom: 0px;"> ID : {{data.id}}</small> </p>
+
+      </mat-card-content>
+   
+     
+
+   </mat-card>
+</div> -->
+
+
+
+
+<mat-card class="card" style="background: linear-gradient(
+      rgba(255, 255, 255, 0.8), 
+      rgba(255, 255, 255, 0.7)
+    ),url('../../assets/doodul.png')" *ngFor="let data of list | paginate: config">
+
+      <mat-card-title>
+         {{data.name}}
+      </mat-card-title>
+      <mat-card-subtitle>
+         Country : {{data.country}}
+      </mat-card-subtitle>
+      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      <!-- style="background-image: url('../../assets/doodul.png');" -->
+
+      <mat-card-content>
+        <!-- <p> Country : {{data.country}}</p> <br> -->
+         <mat-divider style="width: 80%; margin-left: 10%;"></mat-divider>
+         <p> <small  style="margin-top:1px; margin-bottom: 0px;"> ID : {{data.id}}</small> </p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        
+         <!-- <button *ngIf="data.status" mat-icon-button class="button-pos" (click)="onView(data.id)"> -->
+            <button *ngIf="data.status" mat-icon-button class="button-pos" (click)="onView(data.id); viewStats(data)">
+
+            <mat-icon>home</mat-icon>
+          </button>
+        
+       </mat-card-actions>
+   </mat-card>
+</div>
+
+
+
+
+
+<div class="pagination">
+   <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+</div>
+
+<script>console.log(this.list.role)</script>

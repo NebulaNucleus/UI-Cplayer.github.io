@@ -1,0 +1,35 @@
+<div [ngStyle]="{'background' : 'url(https://media.istockphoto.com/id/512279160/vector/batsman-playing-cricket-championship.jpg?s=612x612&w=0&k=20&c=TRIf8pSr_XQIH3doMlsvpj16eNzx3_b9ys4ie_B-4Z0=)'}">
+</div>
+<app-header></app-header>
+
+<div class="login"> Login Form</div>
+<form [formGroup]="loginForm" (ngSubmit)="logIn()">
+    <div>
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter Email" formControlName="email">
+        <small class="esmall" *ngIf="email.invalid && (email.dirty || email.touched)">
+            email is mandatory field
+        </small>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter Password" formControlName="password">
+        <small *ngIf="password.invalid && (password.dirty || password.touched)">
+            <small *ngIf="password.errors.required">
+                password cannot be left blank
+            </small>
+            <small *ngIf="password.errors.minlength">
+                password must have minimum 8characters
+            </small>
+        </small>
+    </div>
+
+    <div class="but">
+        <button [disabled]="!loginForm.valid" value="sign In">Log In</button>
+        <!--input class="submit"[disabled} = "!loginForm.valid" value="signIn"-->
+        <button (click)="tosignup()" value="signIn">New User</button>
+    </div>
+</form>
+
+
+<app-footer></app-footer>

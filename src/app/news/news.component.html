@@ -1,0 +1,22 @@
+<div class="cardContainer">
+
+   <mat-card class="card" *ngFor="let data of list">
+
+      <mat-card-title>
+         {{data.title}}
+      </mat-card-title><br>
+
+      <a href="{{data.url}}" target="_blank">
+         <img width="500px" mat-card-image height="250px" [src]="data.urlToImage">
+      </a>
+
+      <mat-card-subtitle>
+         {{data.description}}
+      </mat-card-subtitle>
+
+      <mat-card-content>
+         {{data.content}}
+      </mat-card-content>
+
+   </mat-card>
+</div>

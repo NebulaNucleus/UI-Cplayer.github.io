@@ -1,0 +1,23 @@
+<!-- Show the cards of recommended players -->
+
+<div class="cardContainer">
+
+   <mat-card class="card" *ngFor="let data of list">
+
+      <mat-card-title>
+         {{data.name}}
+      </mat-card-title>
+
+      <mat-card-subtitle>
+         {{data.dateOfBirth}}
+      </mat-card-subtitle>
+
+      <img mat-card-image height="250px" [src]="data.playerImg">
+
+      <mat-card-content>
+         <b>Conutry :</b> {{data.country}}<br>
+         <b>Teams : </b>{{data.placeOfBirth}}<br>
+         <b>Role : </b>{{data.role}}
+      </mat-card-content>
+   </mat-card>
+</div>

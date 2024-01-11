@@ -1,0 +1,53 @@
+<!-- Sign Up form -->
+
+<app-header></app-header>
+
+<div class="signup">Sign Up Form</div>
+<form [formGroup]="loginForm" (ngSubmit)="signIn()">
+   <div>
+      <label for="email">Email</label>
+      <input class="email" type="text" placeholder="  Enter email" formControlName="email"><br>
+      <small class="err" *ngIf="email.invalid && (email.dirty || email.touched)">
+         Email is mandatory field
+      </small>
+   </div>
+   <div>
+      <label for="password">Password</label>
+      <input class="password" type="password" placeholder="  Enter password" formControlName="password"><br>
+      <small *ngIf="password.invalid && (password.dirty || password.touched)">
+         <small class="err" *ngIf="password.errors.required">
+            Password cannot be left blank
+         </small>
+         <small class="err" *ngIf="password.errors.minlength">
+            Password must have minimum 8characters
+         </small>
+      </small>
+   </div>
+   <div>
+      <label for="name">Name</label>
+      <input class="name" type="text" placeholder="  Enter your name" formControlName="name"><br>
+      <small class="err" *ngIf="name.invalid && (name.dirty || name.touched)">
+         Name is mandatory field
+      </small>
+   </div>
+   <div>
+      <label for="mobile">Mobile</label>
+      <input class="mobile" type="text" placeholder="  Enter your mobile" formControlName="mobile"><br>
+      <small class="err" *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
+         Enter a valid 10 digit Mobile Number
+      </small>
+   </div>
+
+   <div class="image-upload-container btn btn-bwm">
+      <label>Image</label>
+      <input #imageInput class="image" type="file" (change)="onFileChanged($event)">
+   </div>
+
+   <div class="but">
+      <button [disabled]="!loginForm.valid" value="sign Up">Sign Up</button>
+      <!--input class="submit"[disabled} = "!loginForm.valid" value="signIn"-->
+      <button (click)="tologin()" value="log In">Already Registered</button>
+   </div>
+</form>
+
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+.formTaker-Expansion{
+   display: flex;
+   flex-direction: column;
+   width: 40%;
+   margin: 2vh auto;
+}
+.buttn{
+   width: 50%;
+   margin: 2vh auto;
+}
+.cardContainer{
+   display: flex;
+   flex-wrap: wrap;
+ }
+.card{
+   width: 210px;
+   margin: 12px;
+ }
+
+.pagination{
+   position: absolute;
+   margin-top: 30px;
+   margin-bottom: 60px;
+   right: 20px;
+ }
+ .button-pos{
+    position: relative;
+    margin: 2vh auto;
+ }

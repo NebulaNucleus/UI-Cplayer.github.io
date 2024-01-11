@@ -1,0 +1,32 @@
+table, td, th {  
+   border: 1px solid #ddd;
+   text-align: left;
+ }
+ 
+ table {
+   border-collapse: collapse;
+   width: 100%;
+ }
+ 
+ th, td {
+   padding: 5px;
+ }
+
+*{
+  box-sizing: border-box;
+}
+
+.menu {
+  width:20%;
+  float: left;
+  padding: 1px;
+}
+
+.main {
+  width: 80%;
+  float: left;
+  padding: 1px;
+}
+.bowling{
+  margin-top: 20px;
+}

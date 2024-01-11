@@ -1,0 +1,160 @@
+form{
+   border: 1px solid rgb(0, 0, 0);
+   background-color: rgba(0, 0, 0, 0.616);
+   border-width: 2px;
+   margin:auto;
+   margin-top: 20px;
+   width:50vw;
+} 
+
+form div {
+   padding: 10px;
+}
+
+form div button{
+   width : 35%;
+   height: 30px;
+   background-color: rgba(6, 3, 22, 0.692);
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.466);
+    color: lavenderblush;
+   font-size: 15px;
+   margin: 2vh auto;
+}
+
+.but{
+   display: flex;
+   margin-left: 10px;
+}
+
+small{
+   color: red;
+   font-style: italic;
+}
+label{
+   color: white;
+   font-size: 20px;
+   margin-bottom: 10px;
+   margin-left:  1.5%;
+}
+
+.signup{
+   color:rgb(0, 0, 0);
+   font-size: 28px;
+   text-align: center;
+   margin-top: 2.2%;
+   margin-bottom: 3%;
+}
+.email{
+   width: 27vw;
+   background-color: rgba(0, 0, 0, 0);
+   border-width: 1px;
+   border-color: rgba(0, 0, 0, 0.466);
+   color: lavenderblush;
+   height: 28px;
+   margin-left: 64px;
+}
+.password{
+   width: 27vw;
+   background-color: rgba(0, 0, 0, 0);
+   border-width: 1px;
+   border-color: rgba(0, 0, 0, 0.466);
+   color: lavenderblush;
+   height: 28px;
+   margin-left: 25px;
+}
+.name{
+   width: 27vw;
+   background-color: rgba(0, 0, 0, 0);
+   border-width: 1px;
+   border-color: rgba(0, 0, 0, 0.466);
+   color: lavenderblush;
+   height: 28px;
+   margin-left: 60px;
+}
+.mobile{
+   width: 27vw;
+   background-color: rgba(0, 0, 0, 0);
+   border-width: 1px;
+   border-color: rgba(0, 0, 0, 0.466);
+   color: lavenderblush;
+   height: 25px;
+   margin-left: 53px;
+}
+.err{
+   margin-left: 130px;
+}
+.image{
+   width: 27vw;
+   border-width: 1px;
+   color: rgb(255, 4, 4);
+   height: 25px;
+   margin-left: 60px;
+}
+.heading{
+   font-size: xx-large;
+   margin-right: 24%;
+   margin-left: 1%;
+ }
+ .top{
+   position: absolute;
+   right: 120px;
+   font-size: larger;
+ }
+ .side{
+   margin: 20px 10px;
+ }
+ .logo{
+   height: 30px;
+ }
+ .dropdown {
+   position: absolute;
+   right: 48px;
+ }
+ 
+ .dropdown-content {
+   display: none;
+   position: absolute; 
+   background-color: #f9f9f9;
+   min-width: 80px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ }
+ 
+ .dropdown:hover .dropdown-content {
+   z-index: 2;
+   display: block;
+   color: rgb(255, 255, 255);
+   background-color: rgba(0, 0, 0, 0.644);
+ }
+ .foot{
+   position: absolute;
+   bottom: 0px;
+   width: 99%;
+   z-index: 2;
+ }
+ .icons{
+   margin-left: 10px;
+   height: 30px;
+ }
+ .copy{
+   position: absolute;
+   right: 10px;
+   font-size: 13px;
+ }
+ .foot-text{
+   font-size: medium;
+ }
+ .headers{
+    margin-top: 7%;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: x-large;
+    text-align: center;
+
+ }
+.delpa{
+   display: flex;
+   justify-content: center;
+   margin-top: 30px;
+}
